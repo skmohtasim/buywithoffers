@@ -13,7 +13,7 @@ namespace BuyWithOffers.Controllers
         //
         // GET: /Product/
         Product objProduct = new Product();
-
+        ProductDB objProductDB = new ProductDB();
         public ActionResult Index()
         {
             return View();
@@ -49,33 +49,26 @@ namespace BuyWithOffers.Controllers
         }
 
         [HttpPost]
-        public ActionResult Product(ProductDB objProductDB)
+        public ActionResult Product(string iphone6data, string iphone5data, string ipaddata, string macbookairdata, string macbookprodata)
         {
             List<SelectListItem> driphone6 = new List<SelectListItem>();
-            string noOfIphone6 = Request.Form["iphone6data"].ToString();
-            objProduct.Iphone6 = objProductDB.GetIphone6(driphone6, noOfIphone6);
+            objProduct.Iphone6 = objProductDB.GetIphone6(driphone6, iphone6data);
             ViewBag.iphone6data = objProduct.Iphone6;
 
-
-
             List<SelectListItem> driphone5 = new List<SelectListItem>();
-            string noOfIphone5 = Request.Form["iphone5data"].ToString();
-            objProduct.Iphone5 = objProductDB.GetIphone5(driphone5, noOfIphone5);
+            objProduct.Iphone5 = objProductDB.GetIphone5(driphone5, iphone5data);
             ViewBag.iphone5data = objProduct.Iphone5;
 
             List<SelectListItem> driIpad = new List<SelectListItem>();
-            string noOfIpad = Request.Form["ipaddata"].ToString();
-            objProduct.Ipad = objProductDB.GetIpad(driIpad, noOfIpad);
+            objProduct.Ipad = objProductDB.GetIpad(driIpad, ipaddata);
             ViewBag.ipaddata = objProduct.Ipad;
 
             List<SelectListItem> drmacbookair = new List<SelectListItem>();
-            string noOfMacbookair = Request.Form["macbookairdata"].ToString();
-            objProduct.MacBookAir = objProductDB.GetMacBookAir(drmacbookair, noOfMacbookair);
+            objProduct.MacBookAir = objProductDB.GetMacBookAir(drmacbookair, macbookairdata);
             ViewBag.macbookairdata = objProduct.MacBookAir;
 
             List<SelectListItem> macbookpro = new List<SelectListItem>();
-            string noOfMacbookpro = Request.Form["macbookprodata"].ToString();
-            objProduct.MacBookPro = objProductDB.GetMacBookPro(macbookpro, noOfMacbookpro);
+            objProduct.MacBookPro = objProductDB.GetMacBookPro(macbookpro, macbookprodata);
             ViewBag.macbookprodata = objProduct.MacBookPro;
 
             bool isBrithday = Convert.ToBoolean(Request.Form["birthday"]);
@@ -88,20 +81,20 @@ namespace BuyWithOffers.Controllers
             objUtility.IsBirthday = isBrithday;
             objUtility.IsSeniorCitizen = isSeniorCitizen;
 
-            if (noOfIphone6 != "" && noOfIphone6 != null)
-                objUtility.Setiphone6price(Convert.ToInt16(noOfIphone6));
+            if (iphone6data != "" && iphone6data != null)
+                objUtility.Setiphone6price(Convert.ToInt16(iphone6data));
 
-            if (noOfIphone5 != "" && noOfIphone5 != null)
-                objUtility.Setiphone5price(Convert.ToInt16(noOfIphone5));
+            if (iphone5data != "" && iphone5data != null)
+                objUtility.Setiphone5price(Convert.ToInt16(iphone5data));
 
-            if (noOfIpad != "" && noOfIpad != null)
-                objUtility.Setipadprice(Convert.ToInt16(noOfIpad));
+            if (ipaddata != "" && ipaddata != null)
+                objUtility.Setipadprice(Convert.ToInt16(ipaddata));
 
-            if (noOfMacbookair != "" && noOfMacbookair != null)
-                objUtility.SetmacBookAirprice(Convert.ToInt16(noOfMacbookair));
+            if (macbookairdata != "" && macbookairdata != null)
+                objUtility.SetmacBookAirprice(Convert.ToInt16(macbookairdata));
 
-            if (noOfMacbookpro != "" && noOfMacbookpro != null)
-                objUtility.SetmacBookproprice(Convert.ToInt16(noOfMacbookpro));
+            if (macbookprodata != "" && macbookprodata != null)
+                objUtility.SetmacBookproprice(Convert.ToInt16(macbookprodata));
 
 
             bool schemetype = Convert.ToBoolean(Request.Form["schemetype"]);
