@@ -7,76 +7,78 @@ using BuyWithOffers.App_Code;
 using BuyWithOffers.Models;
 namespace BuyWithOffers.Controllers
 {
-    
+
     public class ProductController : Controller
     {
         //
         // GET: /Product/
-        Productdata objProductData = new Productdata();
+        Product objProduct = new Product();
+
         public ActionResult Index()
         {
             return View();
         }
 
-        
-       [HttpGet]
+
+        [HttpGet]
         public ActionResult Product()
         {
-            
+            ProductDB objProductDB = new ProductDB();
             List<SelectListItem> driphone6 = new List<SelectListItem>();
-            driphone6 =objProductData.GetIphone6(driphone6,"");
-            ViewBag.iphone6data = driphone6;
+            objProduct.Iphone6 = objProductDB.GetIphone6(driphone6, "");
+            ViewBag.iphone6data = objProduct.Iphone6;
 
             List<SelectListItem> driphone5 = new List<SelectListItem>();
-            driphone5 = objProductData.GetIphone5(driphone5, "");
+            driphone5 = objProductDB.GetIphone5(driphone5, "");
             ViewBag.iphone5data = driphone5;
 
             List<SelectListItem> driIpad = new List<SelectListItem>();
-            driIpad = objProductData.GetIpad(driIpad, "");
+            driIpad = objProductDB.GetIpad(driIpad, "");
             ViewBag.ipaddata = driIpad;
 
             List<SelectListItem> drmacbookair = new List<SelectListItem>();
-            drmacbookair = objProductData.GetMacBookAir(drmacbookair, "");
+            drmacbookair = objProductDB.GetMacBookAir(drmacbookair, "");
             ViewBag.macbookairdata = drmacbookair;
 
             List<SelectListItem> macbookpro = new List<SelectListItem>();
-            macbookpro = objProductData.GetMacBookPro(macbookpro, "");
+            macbookpro = objProductDB.GetMacBookPro(macbookpro, "");
             ViewBag.macbookprodata = macbookpro;
 
-          
-            return View();
+
+            return View(objProduct);
         }
 
         [HttpPost]
-        public ActionResult Product(FormCollection collection)
+        public ActionResult Product(ProductDB objProductDB)
         {
             List<SelectListItem> driphone6 = new List<SelectListItem>();
-            string noOfIphone6= Request.Form["iphone6data"].ToString();
-            driphone6 = objProductData.GetIphone6(driphone6, noOfIphone6);
-            ViewBag.iphone6data = driphone6;
+            string noOfIphone6 = Request.Form["iphone6data"].ToString();
+            objProduct.Iphone6 = objProductDB.GetIphone6(driphone6, noOfIphone6);
+            ViewBag.iphone6data = objProduct.Iphone6;
+
 
 
             List<SelectListItem> driphone5 = new List<SelectListItem>();
             string noOfIphone5 = Request.Form["iphone5data"].ToString();
-            driphone5 = objProductData.GetIphone5(driphone5, noOfIphone5);
-            ViewBag.iphone5data = driphone5;
+            objProduct.Iphone5 = objProductDB.GetIphone5(driphone5, noOfIphone5);
+            ViewBag.iphone5data = objProduct.Iphone5;
 
             List<SelectListItem> driIpad = new List<SelectListItem>();
             string noOfIpad = Request.Form["ipaddata"].ToString();
-            driIpad = objProductData.GetIpad(driIpad, noOfIpad);
-            ViewBag.ipaddata = driIpad;
+            objProduct.Ipad = objProductDB.GetIpad(driIpad, noOfIpad);
+            ViewBag.ipaddata = objProduct.Ipad;
 
             List<SelectListItem> drmacbookair = new List<SelectListItem>();
             string noOfMacbookair = Request.Form["macbookairdata"].ToString();
-            drmacbookair = objProductData.GetMacBookAir(drmacbookair, noOfMacbookair);
-            ViewBag.macbookairdata = drmacbookair;
+            objProduct.MacBookAir = objProductDB.GetMacBookAir(drmacbookair, noOfMacbookair);
+            ViewBag.macbookairdata = objProduct.MacBookAir;
 
             List<SelectListItem> macbookpro = new List<SelectListItem>();
-            string noOfMacbookpro= Request.Form["macbookprodata"].ToString();
-            macbookpro = objProductData.GetMacBookPro(macbookpro, noOfMacbookpro);
-            ViewBag.macbookprodata = macbookpro;
+            string noOfMacbookpro = Request.Form["macbookprodata"].ToString();
+            objProduct.MacBookPro = objProductDB.GetMacBookPro(macbookpro, noOfMacbookpro);
+            ViewBag.macbookprodata = objProduct.MacBookPro;
 
-            bool isBrithday =Convert.ToBoolean(Request.Form["birthday"]);
+            bool isBrithday = Convert.ToBoolean(Request.Form["birthday"]);
             ViewData["isBirthday"] = isBrithday;
             bool isSeniorCitizen = Convert.ToBoolean(Request.Form["citizen"]);
             ViewData["isCitizen"] = isSeniorCitizen;
@@ -86,10 +88,10 @@ namespace BuyWithOffers.Controllers
             objUtility.IsBirthday = isBrithday;
             objUtility.IsSeniorCitizen = isSeniorCitizen;
 
-            if (noOfIphone6 != "" && noOfIphone6!=null)
+            if (noOfIphone6 != "" && noOfIphone6 != null)
                 objUtility.Setiphone6price(Convert.ToInt16(noOfIphone6));
 
-            if(noOfIphone5!="" && noOfIphone5!=null)
+            if (noOfIphone5 != "" && noOfIphone5 != null)
                 objUtility.Setiphone5price(Convert.ToInt16(noOfIphone5));
 
             if (noOfIpad != "" && noOfIpad != null)
@@ -108,7 +110,7 @@ namespace BuyWithOffers.Controllers
             return View();
         }
 
-       
+
     }
 
 }
