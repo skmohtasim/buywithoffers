@@ -26,3 +26,31 @@ C:\project(.net)\MVC Projects\BuyWithOffers\BuyWithOffers\bin\System.Web.WebPage
 C:\project(.net)\MVC Projects\BuyWithOffers\BuyWithOffers\bin\System.Web.WebPages.Razor.xml
 C:\project(.net)\MVC Projects\BuyWithOffers\BuyWithOffers\obj\Debug\BuyWithOffers.dll
 C:\project(.net)\MVC Projects\BuyWithOffers\BuyWithOffers\obj\Debug\BuyWithOffers.pdb
+F:\Git\buywithoffers\BuyWithOffers\bin\BuyWithOffers.dll.config
+F:\Git\buywithoffers\BuyWithOffers\bin\BuyWithOffers.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\BuyWithOffers.pdb
+F:\Git\buywithoffers\BuyWithOffers\bin\Microsoft.Web.Infrastructure.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\Newtonsoft.Json.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Net.Http.Formatting.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Helpers.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Http.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Http.WebHost.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Mvc.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Razor.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.Deployment.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.Razor.dll
+F:\Git\buywithoffers\BuyWithOffers\bin\Newtonsoft.Json.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Net.Http.Formatting.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Helpers.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Http.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Http.WebHost.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Mvc.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.Razor.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.Deployment.xml
+F:\Git\buywithoffers\BuyWithOffers\bin\System.Web.WebPages.Razor.xml
+F:\Git\buywithoffers\BuyWithOffers\obj\Debug\BuyWithOffers.csprojResolveAssemblyReference.cache
+F:\Git\buywithoffers\BuyWithOffers\obj\Debug\BuyWithOffers.dll
+F:\Git\buywithoffers\BuyWithOffers\obj\Debug\BuyWithOffers.pdb

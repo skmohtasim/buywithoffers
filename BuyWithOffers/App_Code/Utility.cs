@@ -7,9 +7,9 @@ namespace BuyWithOffers.App_Code
 {
     public class Utility
     {
-        public readonly int iphone6Discount = 5;
-        public readonly int birthdayDiscount = 10;
-        public readonly int seniorCitizenDiscount = 15;
+        private readonly int iphone6Discount = 5;
+        private readonly int birthdayDiscount = 10;
+        private readonly int seniorCitizenDiscount = 15;
         public readonly int highValueOrderCitizen = 20;
         private double total = 0;
         private double grandTotal = 0;
